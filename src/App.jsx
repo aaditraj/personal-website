@@ -1,4 +1,6 @@
 import './App.css'
+import featurePlotImg from './assets/BIONICS-1.png'
+import tremorPlotImg from './assets/BIONICS-2.png'
 
 const showcaseProjects = [
   {
@@ -187,13 +189,13 @@ function MediaPanel({ project }) {
           <div className="rehab-flow-stage">
             <p className="rehab-flow-title">Feature signal</p>
             <div className="rehab-flow-card">
-              {featurePlot.src ? (
-                <a href={featurePlot.src} target="_blank" rel="noreferrer" className="rehab-flow-image-link">
+              {featurePlotImg ? (
+                <a href={featurePlotImg} target="_blank" rel="noreferrer" className="rehab-flow-image-link">
                   <div
                     className="rehab-flow-image"
                     role="img"
                     aria-label={featurePlot.label}
-                    style={{ backgroundImage: `url(${featurePlot.src})` }}
+                    style={{ backgroundImage: `url(${featurePlotImg})` }}
                   />
                 </a>
               ) : (
@@ -212,13 +214,13 @@ function MediaPanel({ project }) {
           <div className="rehab-flow-stage">
             <p className="rehab-flow-title">Combined output</p>
             <div className="rehab-flow-card">
-              {outputPlot.src ? (
-                <a href={outputPlot.src} target="_blank" rel="noreferrer" className="rehab-flow-image-link">
+              {tremorPlotImg ? (
+                <a href={tremorPlotImg} target="_blank" rel="noreferrer" className="rehab-flow-image-link">
                   <div
                     className="rehab-flow-image"
                     role="img"
                     aria-label={outputPlot.label}
-                    style={{ backgroundImage: `url(${outputPlot.src})` }}
+                    style={{ backgroundImage: `url(${tremorPlotImg})` }}
                   />
                 </a>
               ) : (
