@@ -73,11 +73,11 @@ const showcaseProjects = [
     accent: 'rose',
     mediaKind: 'rehab-flow',
     featurePlot: {
-      src: '/images/rehab/BIONICS-1.png',
+      src: '../assets/BIONICS-1.png',
       label: 'Feature plot: distance head to hand',
     },
     outputPlot: {
-      src: '/images/rehab/BIONICS-2.png',
+      src: '../assets/BIONICS-2.png',
       label: 'Aggregate model output plot',
     },
     ctaLabel: 'Research context',
@@ -258,7 +258,7 @@ function MediaPanel({ project }) {
 }
 
 function App() {
-  const profileImageSrc = '/IMG_9510.jpeg'
+  const profileImageSrc = '../assets/IMG_9510.jpeg'
 
   return (
     <div className="page-shell">
