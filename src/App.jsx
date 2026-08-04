@@ -1,6 +1,7 @@
 import './App.css'
 import featurePlotImg from './assets/BIONICS-1.png'
 import tremorPlotImg from './assets/BIONICS-2.png'
+import profileImg from './assets/IMG_9510.jpeg'
 
 const showcaseProjects = [
   {
@@ -191,11 +192,10 @@ function MediaPanel({ project }) {
             <div className="rehab-flow-card">
               {featurePlotImg ? (
                 <a href={featurePlotImg} target="_blank" rel="noreferrer" className="rehab-flow-image-link">
-                  <div
+                  <img
+                    src={featurePlotImg}
+                    alt={featurePlot.label}
                     className="rehab-flow-image"
-                    role="img"
-                    aria-label={featurePlot.label}
-                    style={{ backgroundImage: `url(${featurePlotImg})` }}
                   />
                 </a>
               ) : (
@@ -216,11 +216,10 @@ function MediaPanel({ project }) {
             <div className="rehab-flow-card">
               {tremorPlotImg ? (
                 <a href={tremorPlotImg} target="_blank" rel="noreferrer" className="rehab-flow-image-link">
-                  <div
+                  <img
+                    src={tremorPlotImg}
+                    alt={featurePlot.label}
                     className="rehab-flow-image"
-                    role="img"
-                    aria-label={outputPlot.label}
-                    style={{ backgroundImage: `url(${tremorPlotImg})` }}
                   />
                 </a>
               ) : (
@@ -260,7 +259,7 @@ function MediaPanel({ project }) {
 }
 
 function App() {
-  const profileImageSrc = '../assets/IMG_9510.jpeg'
+  // const profileImageSrc = '../assets/IMG_9510.jpeg'
 
   return (
     <div className="page-shell">
@@ -276,8 +275,8 @@ function App() {
             </div>
 
             <div className="hero-photo-slot">
-              {profileImageSrc ? (
-                <img src={profileImageSrc} alt="Aaditya Raj" className="hero-photo" />
+              {profileImg ? (
+                <img src={profileImg} alt="Aaditya Raj" className="hero-photo" />
               ) : (
                 <div className="hero-photo-placeholder">
                   <span>Add photo</span>
