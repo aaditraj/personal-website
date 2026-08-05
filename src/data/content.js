@@ -14,22 +14,24 @@ export const profile = {
 export const projects = [
   {
     id: 'spillbox',
-    title: 'Spillbox',
+    title: 'Spillbox PyTorch Training',
+    org: { label: 'Spillbox', href: 'https://spillbox.io' },
     kind: 'AI infrastructure',
     year: '2025',
-    lede: 'A Kubernetes training stack that spills on-prem GPU jobs into the cloud when the rack runs out.',
+    lede: 'GPU cloud bursting for PyTorch: on-prem jobs spill onto an AWS Kubernetes cluster that pulls their packages and training data back over NFS.',
     body: [
-      'Wired an AWS cluster into Spillbox and automated GPU provisioning plus the PyTorch training path around it.',
-      'Trained a 1.5 GB sentiment model in 7.3 minutes and cut distributed training time 40% going from one GPU to two.',
+      'Set up the AWS Kubernetes cluster and integrated it with Spillbox for on-prem to cloud deployment of AI workloads.',
+      'Automated GPU access on Kubernetes and mounted host Python packages and training data dynamically over Spillbox NFS, with a CLI to manage the cloud training workflows.',
+      'Demoed a 1.5 GB sentiment classifier trained on 50 MB of data in 7.3 minutes; optimizing cross-GPU communication made 2-GPU training 40% faster than 1-GPU with accuracy unchanged.',
     ],
-    stack: ['Kubernetes', 'AWS', 'PyTorch', 'Python'],
+    stack: ['Kubernetes', 'AWS', 'PyTorch', 'NFS'],
     media: { kind: 'video', src: 'https://youtu.be/Jk3v7Ytrxuw' },
     caption: 'Walkthrough of the cluster spilling a training job to cloud GPUs.',
-    link: { label: 'spillbox.io', href: 'https://spillbox.io' },
   },
   {
     id: 'greenhouse',
     title: 'Greenhouse Robot',
+    org: { label: 'UCLA Structures-Computer Interaction Lab', href: 'https://structures.computer' },
     kind: 'Robotics & perception',
     year: '2026',
     lede: 'An arm that finds a leaf, plans around everything else in the greenhouse, and photographs it.',
@@ -39,12 +41,12 @@ export const projects = [
     ],
     stack: ['ROS', 'MoveIt', 'RealSense', 'Open3D'],
     media: { kind: 'video', src: 'https://youtu.be/XXWZRo8ODFQ' },
-    caption: 'Autonomous leaf-imaging run at the UCLA Structures-Computer Interaction Lab.',
-    link: { label: 'UCLA Structures-Computer Interaction Lab', href: 'https://structures.computer' },
+    caption: 'Autonomous leaf-imaging run in the lab greenhouse.',
   },
   {
     id: 'rehab',
     title: 'Autonomous Rehabilitation',
+    org: { label: 'UCLA Bionics Lab', href: 'http://bionics.seas.ucla.edu/' },
     kind: 'Computer vision',
     year: '2025',
     lede: 'Scoring stroke recovery from motion capture instead of a clinician\u2019s stopwatch.',
@@ -75,11 +77,11 @@ export const projects = [
     },
     caption:
       'Head-to-hand distance is one of several engineered signals behind the tremor score. Click either plot for full resolution.',
-    link: { label: 'UCLA Bionics Lab', href: 'http://bionics.seas.ucla.edu/' },
   },
   {
     id: 'gambling-coach',
     title: 'Responsible Gambling Coach',
+    org: { label: 'UCLA Anderson', href: 'https://www.anderson.ucla.edu' },
     kind: 'Mobile product',
     year: '2025',
     lede: 'A behavioral-nudge app for UCLA Anderson, taken from a whiteboard to the app stores.',
@@ -96,7 +98,6 @@ export const projects = [
       ],
     },
     caption: 'Onboarding and day-to-day use, recorded on device.',
-    link: { label: 'UCLA Anderson', href: 'https://www.anderson.ucla.edu' },
   },
 ]
 

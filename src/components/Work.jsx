@@ -19,7 +19,20 @@ export default function Work() {
             </div>
 
             <div className="work-main">
-              <h3 className="work-title">{project.title}</h3>
+              <div className="work-heading">
+                <h3 className="work-title">{project.title}</h3>
+                {project.org ? (
+                  <a
+                    className="work-org"
+                    href={project.org.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {project.org.label}
+                  </a>
+                ) : null}
+              </div>
+
               <p className="work-lede">{project.lede}</p>
 
               <ul className="work-points">
@@ -37,17 +50,6 @@ export default function Work() {
               <Media media={project.media} title={project.title} />
 
               {project.caption ? <p className="caption">{project.caption}</p> : null}
-
-              {project.link ? (
-                <a
-                  className="link-underline work-link"
-                  href={project.link.href}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {project.link.label}
-                </a>
-              ) : null}
             </div>
           </article>
         ))}
