@@ -1,16 +1,41 @@
-# React + Vite
+# aaditraj.github.io — personal site
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Single-page portfolio for Aaditya Raj. React + Vite, deployed to GitHub Pages.
 
-Currently, two official plugins are available:
+## Running it
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev      # local dev server
+npm run build    # production build into dist/
+npm run preview  # serve the production build
+npm run deploy   # build + publish dist/ to the gh-pages branch
+```
 
-## React Compiler
+`vite.config.js` sets `base: '/personal-website/'` to match the Pages URL. Change it if the
+repository is ever renamed or moved to a custom domain.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Where things live
 
-## Expanding the Oxlint configuration
+```
+src/
+  data/content.js     profile, projects, experience, open source — edit copy here
+  components/         Nav, Hero, Work, Media, Experience, Footer
+  lib/youtube.js      turns watch / youtu.be / shorts URLs into embed URLs
+  index.css           design tokens (color, type, spacing) + base styles
+  App.css             layout for every section
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+To add a project, append an entry to `projects` in `src/data/content.js`. `media` accepts:
+
+- `{ kind: 'video', src }` — one 16:9 player
+- `{ kind: 'video-pair', items: [{ src, label }, …] }` — two portrait players
+- `{ kind: 'figure-pair', from, to, fromLabel, toLabel }` — two plots with a "feeds" connector
+
+YouTube links work as-is; a direct file URL renders in a native `<video>` instead.
+
+## Design notes
+
+Warm paper background, ink text, one rust accent. Instrument Serif for display, Inter for body,
+JetBrains Mono for metadata. Dark mode follows `prefers-color-scheme` off the tokens in
+`index.css` — no separate stylesheet.
