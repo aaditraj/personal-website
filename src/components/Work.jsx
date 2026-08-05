@@ -6,7 +6,7 @@ export default function Work() {
     <section className="section" id="work">
       <div className="section-head">
         <p className="meta">Selected work</p>
-        <h2>Four things I built, with the receipts.</h2>
+        <h2>Four projects, with the demos and data behind them.</h2>
       </div>
 
       <div className="work-list">

@@ -15,15 +15,13 @@ export default function Hero() {
           </p>
 
           <h1 className="hero-title">
-            Aaditya Raj builds <em>AI infrastructure</em>, robots that see, and software people
-            actually keep using.
+            Hi! I&rsquo;m <em>Aaditya</em>.
           </h1>
 
           <p className="hero-lede">
-            I like the unglamorous middle of a system — the scheduler, the eval harness, the motion
-            planner — where a good decision quietly makes everything downstream faster. Right now
-            that means serving and benchmarking large models at Nutanix, and teaching a robot arm to
-            photograph individual leaves at UCLA.
+            I&rsquo;m a computer science student at UCLA who works on AI infrastructure and
+            robotics. Right now that means serving and benchmarking large models at Nutanix, and
+            building a robot arm that images plants at the Structures-Computer Interaction Lab.
           </p>
 
           <div className="hero-actions">

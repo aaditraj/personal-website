@@ -45,26 +45,35 @@ export default function Media({ media, title }) {
     )
   }
 
-  if (media.kind === 'figure-pair') {
+  if (media.kind === 'figure-flow') {
     return (
-      <div className="media-flow">
-        <div className="media-flow-stage">
-          <a className="frame frame-plot" href={media.from.src} target="_blank" rel="noreferrer">
-            <img src={media.from.src} alt={media.from.alt} loading="lazy" />
-          </a>
-          <p className="meta media-label">{media.fromLabel}</p>
-        </div>
+      <div className="flow">
+        {media.steps.map((step, index) => (
+          <div className="flow-item" key={step.title}>
+            {index > 0 ? (
+              <div className="flow-connector">
+                <span className="flow-connector-line" aria-hidden="true" />
+                <span className="flow-connector-label">{media.connector}</span>
+                <span className="flow-connector-line" aria-hidden="true" />
+              </div>
+            ) : null}
 
-        <div className="media-flow-arrow" aria-hidden="true">
-          <span>feeds</span>
-        </div>
+            <figure className="flow-figure">
+              <figcaption className="flow-head">
+                <span className="flow-step">{step.step}</span>
+                <span className="flow-title">{step.title}</span>
+                <span className="flow-note">{step.note}</span>
+              </figcaption>
 
-        <div className="media-flow-stage">
-          <a className="frame frame-plot" href={media.to.src} target="_blank" rel="noreferrer">
-            <img src={media.to.src} alt={media.to.alt} loading="lazy" />
-          </a>
-          <p className="meta media-label">{media.toLabel}</p>
-        </div>
+              <a className="flow-plot" href={step.src} target="_blank" rel="noreferrer">
+                <img src={step.src} alt={step.alt} loading="lazy" />
+                <span className="flow-zoom" aria-hidden="true">
+                  Open full size
+                </span>
+              </a>
+            </figure>
+          </div>
+        ))}
       </div>
     )
   }

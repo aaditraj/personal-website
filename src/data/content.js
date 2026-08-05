@@ -1,5 +1,5 @@
-import featurePlot from '../assets/BIONICS-1.png'
-import outputPlot from '../assets/BIONICS-2.png'
+import featurePlot from '../assets/BIONICS-1.webp'
+import outputPlot from '../assets/BIONICS-2.webp'
 
 export const profile = {
   name: 'Aaditya Raj',
@@ -25,7 +25,7 @@ export const projects = [
     stack: ['Kubernetes', 'AWS', 'PyTorch', 'Python'],
     media: { kind: 'video', src: 'https://youtu.be/Jk3v7Ytrxuw' },
     caption: 'Walkthrough of the cluster spilling a training job to cloud GPUs.',
-    link: { label: 'spillbox.ai', href: 'https://www.spillbox.ai' },
+    link: { label: 'spillbox.io', href: 'https://spillbox.io' },
   },
   {
     id: 'greenhouse',
@@ -39,8 +39,8 @@ export const projects = [
     ],
     stack: ['ROS', 'MoveIt', 'RealSense', 'Open3D'],
     media: { kind: 'video', src: 'https://youtu.be/XXWZRo8ODFQ' },
-    caption: 'Autonomous leaf-imaging run at the UCLA Structures-Computation Lab.',
-    link: { label: 'UCLA Structures-Computation Lab', href: 'https://ucla.edu' },
+    caption: 'Autonomous leaf-imaging run at the UCLA Structures-Computer Interaction Lab.',
+    link: { label: 'UCLA Structures-Computer Interaction Lab', href: 'https://structures.computer' },
   },
   {
     id: 'rehab',
@@ -54,15 +54,28 @@ export const projects = [
     ],
     stack: ['PyTorch', 'OpenCV', 'NumPy', 'Pandas'],
     media: {
-      kind: 'figure-pair',
-      from: { src: featurePlot, alt: 'Head-to-hand distance feature over a session' },
-      to: { src: outputPlot, alt: 'Aggregate tremor analysis output across patients' },
-      fromLabel: 'One engineered feature',
-      toLabel: 'Aggregate model output',
+      kind: 'figure-flow',
+      steps: [
+        {
+          step: 'Input',
+          title: 'One engineered feature',
+          note: 'Head-to-hand distance per trial, per arm, with reach peaks and troughs detected automatically.',
+          src: featurePlot,
+          alt: 'Head-to-hand distance over time for three trials, left and right arm, with peaks marked',
+        },
+        {
+          step: 'Output',
+          title: 'Tremor score',
+          note: 'Normalized jerk per reach segment — the quantity a clinician would otherwise eyeball.',
+          src: outputPlot,
+          alt: 'Normalized jerk per movement segment for three trials, left and right arm',
+        },
+      ],
+      connector: 'feeds into',
     },
     caption:
-      'Head-to-hand distance is one of several engineered signals feeding the final tremor analysis. Click a plot for full resolution.',
-    link: { label: 'UCLA Bionics Lab', href: 'https://ucla.edu' },
+      'Head-to-hand distance is one of several engineered signals behind the tremor score. Click either plot for full resolution.',
+    link: { label: 'UCLA Bionics Lab', href: 'http://bionics.seas.ucla.edu/' },
   },
   {
     id: 'gambling-coach',
@@ -100,14 +113,14 @@ export const experience = [
     role: 'AI Fellow, Project Helix',
     period: 'Mar — Jun 2026',
     note: 'Evaluation framework for LLM output quality across model families.',
-    href: 'https://www.handshake.com',
+    href: 'https://joinhandshake.com/ai/',
   },
   {
     org: 'Spillbox',
     role: 'Software Intern',
     period: '2025',
     note: 'Distributed training infrastructure and GPU orchestration.',
-    href: 'https://www.spillbox.ai',
+    href: 'https://spillbox.io',
   },
   {
     org: 'UCLA Anderson',
@@ -121,7 +134,16 @@ export const experience = [
 export const openSource = {
   repo: 'vllm-project/semantic-router',
   pr: '#2618',
+  title: 'Add support for Fusion analysis_overrides',
   href: 'https://github.com/vllm-project/semantic-router/pull/2618',
+  repoHref: 'https://github.com/vllm-project/semantic-router',
+  status: 'Merged',
+  mergedOn: 'Jul 2026',
   blurb:
-    'Added per-model analysis overrides to the router: Go config validation, merge and normalization logic, panel execution, tests, docs. +298 / −7 across 7 files, merged upstream.',
+    'Per-model analysis overrides for the router: Go config validation, merge and normalization logic, panel execution, tests, and docs.',
+  stats: [
+    { value: '+298 / −7', label: 'lines changed' },
+    { value: '7', label: 'files touched' },
+    { value: '5.1k', label: 'stars on the repo' },
+  ],
 }

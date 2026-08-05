@@ -4,8 +4,8 @@ export default function Experience() {
   return (
     <section className="section" id="experience">
       <div className="section-head">
-        <p className="meta">Where I&rsquo;ve worked</p>
-        <h2>Short list, long hours.</h2>
+        <p className="meta">Experience</p>
+        <h2>Where I&rsquo;ve worked.</h2>
       </div>
 
       <ul className="roles">
@@ -22,13 +22,34 @@ export default function Experience() {
       </ul>
 
       <div className="oss">
-        <p className="meta">Open source</p>
-        <p className="oss-line">
-          <a className="link-underline" href={openSource.href} target="_blank" rel="noreferrer">
-            {openSource.repo} {openSource.pr}
-          </a>
+        <div className="oss-top">
+          <span className="oss-badge">{openSource.status}</span>
+          <p className="meta">Open source &middot; {openSource.mergedOn}</p>
+        </div>
+
+        <h3 className="oss-title">{openSource.title}</h3>
+
+        <p className="oss-repo">
+          <a className="link-underline" href={openSource.repoHref} target="_blank" rel="noreferrer">
+            <strong>{openSource.repo}</strong>
+          </a>{' '}
+          {openSource.pr}
         </p>
+
         <p className="oss-blurb">{openSource.blurb}</p>
+
+        <ul className="oss-stats">
+          {openSource.stats.map((stat) => (
+            <li key={stat.label}>
+              <span className="oss-stat-value">{stat.value}</span>
+              <span className="meta oss-stat-label">{stat.label}</span>
+            </li>
+          ))}
+        </ul>
+
+        <a className="button oss-cta" href={openSource.href} target="_blank" rel="noreferrer">
+          Read the pull request
+        </a>
       </div>
     </section>
   )
